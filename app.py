@@ -14,7 +14,7 @@ import requests
 
 
 #Exercise 1
-H=sqlite3.connect("hr")
+H=sqlite3.connect("hr.db")
 df=pd.read_sql_query("select * from employees",H)
 
 
@@ -171,10 +171,5 @@ def update_output(value):
     ))
     return fig4
 
-
 if __name__ == "__main__":
-    app.run_server("0.0.0.0", debug=False, port=int(
-        os.environ.get('PORT', 8000)))
-
-
-
+    app.run_server(debug=True)
