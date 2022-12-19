@@ -1,5 +1,4 @@
 # Importing libariries
-import os
 import pandas as pd
 import sqlite3
 from dash import Dash, html, dcc, Input, Output, get_asset_url
