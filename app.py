@@ -1,4 +1,5 @@
 # Importing libariries
+import os
 import pandas as pd
 import sqlite3
 from dash import Dash, html, dcc, Input, Output, get_asset_url
@@ -79,13 +80,8 @@ data.drop("index",inplace=True,axis=1)
 years4 = data.columns
 
 # App
-app = Dash(
-    __name__,
-    meta_tags=[
-        {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}
-    ],
-)
-
+app = dash.Dash(__name__)
+server = app.server
 
 # Main layout
 app.layout = html.Div(style={"text-align":"center"},
@@ -177,7 +173,8 @@ def update_output(value):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server("0.0.0.0", debug=False, port=int(
+        os.environ.get('PORT', 8000)))
 
 
 
