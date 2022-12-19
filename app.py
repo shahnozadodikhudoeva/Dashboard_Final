@@ -79,7 +79,7 @@ data.drop("index",inplace=True,axis=1)
 years4 = data.columns
 
 # App
-app = dash.Dash(__name__)
+app = Dash(__name__)
 server = app.server
 
 # Main layout
