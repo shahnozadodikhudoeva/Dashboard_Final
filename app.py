@@ -14,7 +14,7 @@ import requests
 
 
 #Exercise 1
-H=sqlite3.connect("hr.db")
+H=sqlite3.connect("hr")
 df=pd.read_sql_query("select * from employees",H)
 
 
